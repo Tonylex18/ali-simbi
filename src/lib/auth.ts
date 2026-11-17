@@ -1,13 +1,3 @@
-// DEMO ONLY. These functions stand in for your real auth backend so the screens can be
-// designed and tested. Replace each body with a call to your API or auth provider.
-// Nothing here is saved or sent anywhere.
-//
-// Demo behaviours (so the error states can be seen):
-//   sign up    with an email starting "taken@"   -> "account already exists"
-//   sign in    with password "Wrongpass1"        -> "wrong details"
-//   verify     with the code 000000              -> "code is not right"
-//   reset      with a link that has no token     -> "link expired" (see /reset-password)
-
 import type { Identifier } from "./validation";
 
 export type AuthResult<T = undefined> =

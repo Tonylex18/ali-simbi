@@ -62,8 +62,8 @@ export default function VerifyForm() {
       return;
     }
     setDone(true);
-    // No dashboard yet: go to the home page once verified.
-    setTimeout(() => router.push("/"), 700);
+    // Verified: continue to onboarding, which picks the flow from the sign-up choices.
+    setTimeout(() => router.push("/onboarding"), 700);
   }
 
   function onChange(raw: string) {

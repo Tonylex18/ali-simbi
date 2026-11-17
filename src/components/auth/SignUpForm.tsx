@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { signUp, type Side } from "@/lib/auth";
+import { startSession } from "@/lib/session";
 import {
   describeIdentifier,
   looksLikePhone,
@@ -94,6 +95,14 @@ export default function SignUpForm() {
       if (r.field) document.getElementById(`su-${r.field}`)?.focus();
       return;
     }
+    // Remember the sign-up choices so onboarding can pick the right flow (mock; the backend will own this).
+    startSession({
+      name: values.name.trim(),
+      identifier: r.data.to,
+      side,
+      corper: side === "seeker" && corper,
+      company: side === "company" ? values.company.trim() : undefined,
+    });
     setDone(true);
     router.push(`/verify?to=${encodeURIComponent(r.data.to)}&via=${r.data.via}`);
   }

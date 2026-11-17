@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { navLinks } from "@/lib/content";
 import { btnPrimary, container } from "@/lib/ui";
@@ -28,15 +29,15 @@ export default function Nav() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
-          <a
-            href="#start"
+          <Link
+            href="/sign-in"
             className="hidden text-[15px] font-medium text-ink hover:text-leaf-700 sm:inline"
           >
             Sign in
-          </a>
-          <a href="#start" className={`${btnPrimary} h-10 px-4 text-[15px]`}>
+          </Link>
+          <Link href="/sign-up" className={`${btnPrimary} h-10 px-4 text-[15px]`}>
             Get started
-          </a>
+          </Link>
           <button
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-line bg-white lg:hidden"

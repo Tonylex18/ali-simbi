@@ -19,7 +19,7 @@ export function LogoMark({
 
 export function Wordmark({ onDark = false }: { onDark?: boolean }) {
   return (
-    <span className="inline-flex items-center gap-2.5 text-xl font-bold tracking-tight">
+    <span className="inline-flex items-center gap-2.5 whitespace-nowrap text-xl font-bold tracking-tight">
       <LogoMark
         className="h-8 w-8"
         main={onDark ? "#ffffff" : "var(--color-forest-900)"}
